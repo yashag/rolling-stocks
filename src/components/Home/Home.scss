@@ -1,0 +1,37 @@
+@import '../../theme.scss';
+
+@keyframes logo-effect {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  section.rs-home {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    min-height: 100vh;
+
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+
+    section#rs-home-mostactive {
+        width: 100%;
+
+        & > h3 {
+          color: lightgray;
+        }
+
+        div#rs-home-mostactive-carousel {
+        }
+    }
+  
+  }

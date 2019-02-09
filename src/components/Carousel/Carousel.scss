@@ -1,0 +1,39 @@
+@import '../../theme.scss';
+
+div.rs-carousel {
+  width: 100%;
+  
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  button.rs-carousel-arrow {
+    background: none;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    svg.rs-carousel-arrow-icon {
+      color: $secondary-color;
+      font-size: 6em;
+    }
+  }
+  
+  div.rs-slides-wrapper {
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    min-width: 30em;
+    min-height: 24em;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+    div.rs-slide {}
+  }
+}

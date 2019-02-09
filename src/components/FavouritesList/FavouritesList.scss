@@ -1,0 +1,43 @@
+@import '../../theme.scss';
+
+div#rs-favourites-list-container {
+  max-height: 100vh;
+  overflow-y: auto;
+
+  ul#rs-favourites-list {
+    padding: 0;
+    
+    li.rs-favourites-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      
+      background-color: #2a303e;
+      margin-top: 0.2em;
+      padding: 0.2em;
+      border: 2px solid #5c6679;
+      border-radius: 2px;
+      text-align: left;
+      
+      span.rs-favourites-list-item-name {
+        margin-right: 1vw;
+      }
+      
+      button.rs-favourites-list-item-action {
+        background: none;
+        border: none;
+        outline: none;
+        
+        color: $secondary-color;
+        cursor: pointer;
+        
+        font-size: 18px;
+
+        & > * {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

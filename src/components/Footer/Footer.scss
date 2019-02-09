@@ -1,0 +1,11 @@
+@import '../../theme.scss';
+
+footer#rs-footer {
+
+    div#rs-home-attributions {
+        
+        & > p > a {
+            color: $main-color;
+        }
+    }
+}

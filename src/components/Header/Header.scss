@@ -1,0 +1,42 @@
+header.rs-header {
+    justify-self: flex-start;
+    align-self: start;
+
+    a.rs-header-navigation-link {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    div.rs-header-main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        h1.rs-header-title {
+            font-size: 64px;
+            margin: 0.4em 0;
+        }
+        
+        img.rs-header-logo {
+            height: 4em;
+            
+            animation: logo-effect infinite 20s linear;
+        }
+    }
+
+    div.rs-header-navigation {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+
+        a.rs-header-navigation-link {
+            color: lightgray;
+            margin: 0 1em;
+
+            & > * {
+                vertical-align: middle;
+            }
+        }
+    }
+}
