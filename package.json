@@ -5,6 +5,7 @@
   "private": true,
   "license": "MIT",
   "author": "Yasha Gootkin",
+  "homepage": "https://yashag.github.io/rolling-stocks/",
   "repository": {
     "type" : "git",
     "url" : "https://github.com/yashag/rolling-stocks.git"
