@@ -57,22 +57,12 @@ class Slide extends Component {
 
         return (
             <SlideDiv className="rs-slide" pose={active ? 'visible' : 'hidden'} >
-                <table className='rs-slide-data-table'>
-                    <tbody>
-                        <tr>
-                            <td>Symbol:</td><td>{stock.symbol}</td>
-                        </tr>
-                        <tr>
-                            <td>Company:</td><td>{stock.companyName}</td>
-                        </tr>
-                        <tr>
-                            <td>Primary exchange:</td><td>{stock.primaryExchange}</td>
-                        </tr>
-                        <tr>
-                            <td>Sector:</td><td>{stock.sector}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className='rs-slide-data-table'>
+                    <span className="rs-slide-stock-category">Symbol:</span><span className="rs-slide-stock-value">{stock.symbol}</span>
+                    <span className="rs-slide-stock-category">Company:</span><span className="rs-slide-stock-value">{stock.companyName}</span>
+                    <span className="rs-slide-stock-category">Primary exchange:</span><span className="rs-slide-stock-value">{stock.primaryExchange}</span>
+                    <span className="rs-slide-stock-category">Sector:</span><span className="rs-slide-stock-value">{stock.sector}</span>
+                </div>
 
                 <div className="rs-slide-data-chart">
                     <BarChart width={680} height={300} data={stockData}>

@@ -1,31 +1,29 @@
 @import '../../theme.scss';
 
 div.rs-slide {
-  display: inline-block;
+  // display: grid;
+  // grid-template-columns: 20em auto;
+  // grid-template-rows: 1fr auto auto;
+  display: flex;
+  flex-flow: column;
+  float: left;
+  justify-content: space-evenly;
   position: relative;
 
-  background-color: #2a303e;
+  background-color: $secondary-bg-color;
   color: $secondary-color;
   height: 100%;
   width: 100%;
 
-  table.rs-slide-data-table {
+  div.rs-slide-data-table {
+    display: grid;
+    grid-template-columns: 10em auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     width: 100%;
-    padding: 1em 2em;
-    word-wrap: break-word;
-    width: 100%;
-    
-    table-layout: fixed;
-    text-align: left;
-    
-    tbody {
+    padding: 0 2em;
 
-      td {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-    }
+    word-wrap: break-word;
+    text-align: left;
   }
 
   div.rs-slide-data-chart {
@@ -38,8 +36,6 @@ div.rs-slide {
 
   div.rs-slide-favourites {
     width: 100%;
-    position: absolute;
-    bottom: 1em;
 
     button.rs-slide-favourites-add {
       width: 12em;

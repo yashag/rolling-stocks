@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import Slide from './Slide';
+import Dot from './Dot';
 
 import './Carousel.scss';
 
@@ -15,7 +16,9 @@ class Carousel extends Component {
 
         this.nextSlide = this.nextSlide.bind(this);
         this.prevSlide = this.prevSlide.bind(this);
+        this.goToSlide = this.goToSlide.bind(this);
         this.renderSlides = this.renderSlides.bind(this);
+        this.renderDotsNavigation = this.renderDotsNavigation.bind(this);
     }
 
     nextSlide() {
@@ -28,29 +31,47 @@ class Carousel extends Component {
         this.setState({ currentSlide: newSlideIndex });
     }
 
+    goToSlide(slideIndex) {
+        this.setState({ currentSlide: slideIndex });
+    }
+
     renderSlides() {
         return this.props.data.map((stock, index) =>
             <Slide key={stock.symbol} stock={stock} active={this.state.currentSlide === index} />
         );
     }
 
+    renderDotsNavigation() {
+        return this.props.data.map((stock, index) =>
+            <Dot key={stock.symbol} active={this.state.currentSlide === index} onClick={() => this.goToSlide(index)} />
+        );
+    }
 
     render() {
 
         return (
             <div className="rs-carousel">
 
-                <button className="rs-carousel-arrow" onClick={this.prevSlide}>
-                    <FaChevronLeft className='rs-carousel-arrow-icon' />
-                </button>
+                <div className="rs-carousel-main-slider">
 
-                <div className="rs-slides-wrapper">
-                    {this.renderSlides()}
+                    <div className="rs-slides-wrapper">
+                        {this.renderSlides()}
+                    </div>
+
+                    <div className="rs-carousel-arrows-navigation">
+                        <button className="rs-carousel-arrow rs-carousel-left-arrow" onClick={this.prevSlide}>
+                            <FaChevronLeft className='rs-carousel-arrow-icon' />
+                        </button>
+                        <button className="rs-carousel-arrow rs-carousel-right-arrow" onClick={this.nextSlide}>
+                            <FaChevronRight className='rs-carousel-arrow-icon' />
+                        </button>
+                    </div>
+
                 </div>
 
-                <button className="rs-carousel-arrow" onClick={this.nextSlide}>
-                    <FaChevronRight className='rs-carousel-arrow-icon' />
-                </button>
+                <div className="rs-carousel-dots-navigation">
+                    {this.renderDotsNavigation()}
+                </div>
             </div>
         );
     }

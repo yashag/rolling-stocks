@@ -1,0 +1,19 @@
+@import '../../theme.scss';
+
+div.rs-slides-dot {
+    display: inline-block;
+
+    width: 0.5em;
+    height: 0.5em;
+    margin: 0 0.4em;
+
+    background: $secondary-bg-color;
+    border: 2px solid $secondary-color;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    &.rs-slides-dot-active {
+        background: #8884d8;
+    }
+}
